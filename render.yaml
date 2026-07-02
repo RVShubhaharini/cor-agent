@@ -13,11 +13,11 @@ services:
       - key: GROQ_MODEL
         value: llama-3.3-70b-versatile
       - key: GROQ_API_KEY
-        sync: true
+        value: placeholder_enter_groq_key_here
       - key: SUPABASE_URL
-        sync: true
+        value: placeholder_enter_supabase_url_here
       - key: SUPABASE_KEY
-        sync: true
+        value: placeholder_enter_supabase_key_here
 
   # 2. Frontend Static Site Service
   - type: web
@@ -28,7 +28,4 @@ services:
     staticPublishPath: dist
     envVars:
       - key: VITE_API_URL
-        fromService:
-          name: cro-agent-backend
-          value: url
-          suffix: /api
+        value: placeholder_enter_backend_url_here
