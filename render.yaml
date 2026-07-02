@@ -19,9 +19,9 @@ services:
       - key: SUPABASE_KEY
         sync: true
 
+staticSites:
   # 2. Frontend Static Site Service
-  - type: static
-    name: cro-agent-frontend
+  - name: cro-agent-frontend
     rootDir: frontend
     buildCommand: npm install && npm run build
     publishDir: dist
