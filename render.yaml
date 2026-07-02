@@ -20,10 +20,8 @@ services:
         sync: true
 
   # 2. Frontend Static Site Service
-  - type: web
+  - type: static
     name: cro-agent-frontend
-    env: static
-    plan: free
     rootDir: frontend
     buildCommand: npm install && npm run build
     publishDir: dist
