@@ -1,0 +1,35 @@
+services:
+  # 1. Backend REST API Service
+  - type: web
+    name: cro-agent-backend
+    env: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: GROQ_MODEL
+        value: llama-3.3-70b-versatile
+      - key: GROQ_API_KEY
+        sync: true
+      - key: SUPABASE_URL
+        sync: true
+      - key: SUPABASE_KEY
+        sync: true
+
+  # 2. Frontend Static Site Service
+  - type: web
+    name: cro-agent-frontend
+    env: static
+    plan: free
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    publishDir: dist
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          name: cro-agent-backend
+          value: url
+          suffix: /api

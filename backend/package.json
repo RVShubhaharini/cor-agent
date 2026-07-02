@@ -1,0 +1,26 @@
+{
+  "name": "cro-agent-backend",
+  "version": "1.0.0",
+  "description": "Landing Page CRO Agent - backend (scraper + Gemini analysis API)",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "@supabase/supabase-js": "^2.110.0",
+    "axios": "^1.7.9",
+    "cheerio": "^1.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "got-scraping": "^4.2.1",
+    "nanoid": "^3.3.8",
+    "puppeteer": "^25.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
